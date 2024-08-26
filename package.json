@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "frontend": "cd client && npm run dev" ,
-    "backend" : "cd server && node server.js",
+    "postinstall": "cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm run build",
+    "frontend": "cd client && npm run dev",
+    "backend": "cd server && nodemon server",
     "dev": "concurrently \"npm run frontend\" \"npm run backend\""
   },
   "keywords": [],
@@ -13,6 +14,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.5"
   }
 }
