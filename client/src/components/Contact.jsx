@@ -1,4 +1,12 @@
+import {ToastContainer , toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const Contact = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    toast.success("Message send successfully" , {
+      position: "top-center",
+    });
+  }
   return (
     <div>
       <div className="container mb-5">
@@ -11,14 +19,14 @@ const Contact = () => {
         <div className="row">
           <div className="col-md 5 d-flex justify-content-center">
             <img
-              src="/assets/images/contact.png"
+              src="/assets/contact.png"
               alt="Contact Us"
               height="300px"
               width="300px"
             />
           </div>
           <div className="col-md-6">
-            <form>
+            <form onSubmit={handleClick}>
               <div className="mb-3">
                 <label htmlFor="exampleForm" className="form-label">
                   Full Name
@@ -58,6 +66,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };

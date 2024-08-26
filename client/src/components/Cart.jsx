@@ -3,7 +3,7 @@ import { delCart, addCart} from "../redux/action/index";
 import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
-    const state = useSelector((state) => state.handleCart);
+    let state = useSelector((state) => state.handleCart);
     const dispatch = useDispatch();
     const handleClose = (item) => {
         dispatch(delCart(item));
@@ -12,6 +12,8 @@ const Cart = () => {
     const addProduct = (product) => {
         dispatch(addCart(product));
     }
+
+
 
     const cartItems = (cartItem) => (
         <div className="px-4 my-5 bg-light rounded-3" key={cartItem.id}>
@@ -63,6 +65,7 @@ const Cart = () => {
             {state.length === 0 && emptyCart()}
             {state.length !== 0 && state.map(cartItems)}
             {state.length !== 0 && button()}
+           
         </>
     );
 };

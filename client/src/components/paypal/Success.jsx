@@ -1,42 +1,26 @@
-import { useSelector } from "react-redux";
-import { useMemo } from "react";
-
 const Success = () => {
-  const state = useSelector((state) => state.handleCart);
-  const totalAmount = useMemo(() => {
-    return state.reduce((acc, item) => acc + item.price * item.qty, 0);
-  }, [state]);
-
-  const cartItems = (cartItem) => (
-    <div className="px-4 my-5 bg-light rounded-3" key={cartItem.id}>
-      <div className="container py-4">
-        <div className="row justify-content-center">
-          <div className="col-md-4">
-            <h3>{cartItem.title}</h3>
-            <p className="lead fw-bold">
-              {cartItem.qty} x ${cartItem.price} = ${cartItem.qty * cartItem.price}
+  return (
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ minHeight: "80vh" }}
+    >
+      <div className="col-md-6">
+        <div className="card text-center shadow-lg mb-5 border-success">
+          <div className="card-body p-5">
+            <i
+              className="fa fa-check-circle text-success"
+              style={{ fontSize: "70px" }}
+            ></i>
+            <h2 className="card-title mt-4 mb-4">
+              Your payment was successful
+            </h2>
+            <p className="card-text">
+              Thank you for your shopping with Shopifyyy.
             </p>
           </div>
         </div>
       </div>
     </div>
-  );
-
-  const displayTotal = () => (
-    <div className="px-4 my-5 bg-light rounded-3 py-5">
-      <div className="container py-4">
-        <div className="row">
-          <h3 className="text-center">Total Amount: ${totalAmount}</h3>
-        </div>
-      </div>
-    </div>
-  );
-
-  return (
-    <>
-      {state.length !== 0 && state.map(cartItems)}
-      {state.length !== 0 && displayTotal()}
-    </>
   );
 };
 

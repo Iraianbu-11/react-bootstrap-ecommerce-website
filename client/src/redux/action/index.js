@@ -12,10 +12,3 @@ export const delCart = (product) => {
         payload : product
     }
 }
-
-export const checkOut = (product) => {
-    return {
-        type: "CHECKOUT",
-        payload : product
-    }
-}

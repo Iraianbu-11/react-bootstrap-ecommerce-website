@@ -8,7 +8,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
-import Sucess from './components/paypal/Sucess';
+import Success from './components/paypal/Success';
 import Failure from './components/paypal/Failure';
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
       <Route exact path='/contact' element = {<Contact/>} />
       <Route exact path='/cart' element = {<Cart/>} />
       <Route exact path='/checkout' element = {<Checkout/>} />
-      <Route exact path='/success' element = {<Sucess/>} />
+      <Route exact path='/success' element = {<Success/>} />
       <Route exact path='/failure' element = {<Failure/>} />
     </Routes>
     </>

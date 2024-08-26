@@ -2,12 +2,10 @@ const express = require("express");
 const paypal = require("paypal-rest-sdk");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-require('dotenv').config(); 
-
+require('dotenv').config({ path: '../.env' }); 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
 let amount = 0;
 
 paypal.configure({
@@ -71,6 +69,7 @@ app.get("/success", async (req, res) => {
                 return res.redirect(`${process.env.CLIENT_URL}/failure`);
             } else {
                 console.log("Payment successful:", payment);
+                //localStorage.removeItem("cartItems");
                 return res.redirect(`${process.env.CLIENT_URL}/success`);
             }
         });
@@ -80,7 +79,7 @@ app.get("/success", async (req, res) => {
     }
 });
 
-app.get("/failed", (req, res) => {
+app.get("/cancel", (req, res) => {
     return res.redirect(`${process.env.CLIENT_URL}/failure`);
 });
 

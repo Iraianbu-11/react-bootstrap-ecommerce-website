@@ -17,9 +17,10 @@ const Checkout = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    let res = await axios.post("https://shopifyyy.vercel.app:8000/payment" , {total});
+    const APP_URL = import.meta.env.VITE_APP_URL;
+    console.log(APP_URL);
+    let res = await axios.post(`${APP_URL}/payment`, {total});
     console.log(res);
-
     if(res && res.data){
       let link = res.data.links[1].href;
       window.location.href = link;

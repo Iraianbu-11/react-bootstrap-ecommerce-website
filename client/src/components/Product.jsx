@@ -3,7 +3,8 @@ import Skeleton from 'react-loading-skeleton';
 import { useDispatch } from 'react-redux';
 import { useParams, NavLink } from 'react-router-dom';
 import { addCart } from "../redux/action/index";
-
+import {ToastContainer , toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const Product = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
@@ -23,6 +24,9 @@ const Product = () => {
 
   const addProduct = (product) => {
     dispatch(addCart(product));
+    toast.success("Item added to cart" , {
+      position: "top-center",
+    });
   };
 
   const Loading = () => {
@@ -72,6 +76,7 @@ const Product = () => {
           {loading ? <Loading /> : <ShowProduct />}
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };
