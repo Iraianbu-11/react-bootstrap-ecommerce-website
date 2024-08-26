@@ -18,7 +18,7 @@ const Checkout = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     const APP_URL = import.meta.env.VITE_APP_URL;
-    console.log(APP_URL);
+    console.log("APP URL " + APP_URL);
     let res = await axios.post(`${APP_URL}/payment`, {total});
     console.log(res);
     if(res && res.data){
