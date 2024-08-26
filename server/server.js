@@ -41,21 +41,21 @@ app.post("/payment", async (req, res) => {
             console.error("Error creating payment:", err.response);
             res.status(500).send("Error creating payment");
         } else {
-            res.json(payment); // Send payment data to the frontend
+            res.json(payment); 
         }
     });
 });
 
 app.get("/success", async (req, res) => {
     try {
-        const { paymentId, PayerID } = req.query; // Example, replace with actual total used earlier
+        const { paymentId, PayerID } = req.query; 
 
         const execute_payment_json = {
             payer_id: PayerID,
             transactions: [{
                 amount: {
                     currency: "USD",
-                    total: amount.toString() // Total should match the initial payment creation
+                    total: amount.toString() 
                 }
             }]
         };
