@@ -17,7 +17,7 @@ const Checkout = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    let res = await axios.post("http://shopifyyy.vercel.app:8000/payment" , {total});
+    let res = await axios.post("https://shopifyyy.vercel.app:8000/payment" , {total});
     console.log(res);
 
     if(res && res.data){
