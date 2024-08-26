@@ -15,7 +15,7 @@ const Success = () => {
               Your payment was successful
             </h2>
             <p className="card-text">
-              Thank you for your shopping with Shopifyyy.
+              Thank you for your shopping with Fashio.
             </p>
           </div>
         </div>

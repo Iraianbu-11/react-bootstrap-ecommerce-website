@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary py-3">
         <div className="container">
           <NavLink className="navbar-brand fw-bold fs-3" to="/">
-            Shopifyyy
+            Fashio
           </NavLink>
           <button
             className="navbar-toggler"
