@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 require('dotenv').config(); 
 const app = express();
 app.use(cors({
-    origin: process.env.CLIENT_URL,
+    origin: "*",
   }));
 app.use(bodyParser.json());
 let amount = 0;
