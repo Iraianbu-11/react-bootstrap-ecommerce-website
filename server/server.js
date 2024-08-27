@@ -71,7 +71,6 @@ app.get("/success", async (req, res) => {
                 return res.redirect(`${process.env.CLIENT_URL}/failure`);
             } else {
                 console.log("Payment successful:", payment);
-                //localStorage.removeItem("cartItems");
                 return res.redirect(`${process.env.CLIENT_URL}/success`);
             }
         });

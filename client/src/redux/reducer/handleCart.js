@@ -1,5 +1,5 @@
 /* eslint-disable no-case-declarations */
-const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+const cart = [];
 
 const handleCart = (state = cart, action) => {
     const product = action.payload;
@@ -11,11 +11,9 @@ const handleCart = (state = cart, action) => {
                 const updatedState = state.map((x) => 
                     x.id === product.id ? { ...x, qty: x.qty + 1 } : x
                 );
-                localStorage.setItem("cartItems", JSON.stringify(updatedState));
                 return updatedState;
             } else {
                 const updatedState = [...state, { ...product, qty: 1 }];
-                localStorage.setItem("cartItems", JSON.stringify(updatedState));
                 return updatedState;
             }
         
@@ -30,7 +28,6 @@ const handleCart = (state = cart, action) => {
                         x.id === product.id ? { ...x, qty: x.qty - 1 } : x
                     );
                 }
-                localStorage.setItem("cartItems", JSON.stringify(updatedState));
                 return updatedState;
             }
             return state;
