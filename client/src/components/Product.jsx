@@ -10,11 +10,10 @@ const Product = () => {
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState({});
   const dispatch = useDispatch();
-
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const response = await fetch(`http://localhost:4000/products/${id}`);
       const productData = await response.json();
       setProduct(productData);
       setLoading(false);

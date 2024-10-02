@@ -1,9 +1,6 @@
-/* eslint-disable no-case-declarations */
 const cart = [];
-
 const handleCart = (state = cart, action) => {
     const product = action.payload;
-
     switch(action.type) {
         case "ADDITEM":
             const exist = state.find((x) => x.id === product.id);
@@ -35,5 +32,4 @@ const handleCart = (state = cart, action) => {
             return state;
     }
 };
-
 export default handleCart;
