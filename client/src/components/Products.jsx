@@ -78,7 +78,7 @@ const Products = () => {
         </button>
       </div>
       {filter.map((product) => (
-        <div className="col-md-3 mb-4" key={product.id}>
+        <div className="col-md-3 mb-4" key={product._id}>
           <div
             className="card h-100 text-center p-4"
             style={{ width: "16rem" }}
@@ -95,7 +95,7 @@ const Products = () => {
               </h5>
               <p className="card-text lead fw-bold">${product.price}</p>
               <NavLink
-                to={`/product/${product.id}`}
+                to={`/product/${product._id}`}
                 className="btn btn-outline-dark"
               >
                 Buy Now

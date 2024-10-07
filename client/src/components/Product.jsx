@@ -10,10 +10,11 @@ const Product = () => {
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState({});
   const dispatch = useDispatch();
+  const API_URL = import.meta.env.VITE_SERVER_URL;
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      const response = await fetch(`http://localhost:3000/products/${id}`);
+      const response = await fetch(`${API_URL}/${id}`);
       const productData = await response.json();
       setProduct(productData);
       setLoading(false);
@@ -50,7 +51,7 @@ const Product = () => {
   const ShowProduct = () => {
     return (
       <>
-        <div className="col-md-6 mt-5" key={product.id}>
+        <div className="col-md-6 mt-5" key={product._id}>
           <img src={product.image} alt={product.title} height="400px" width="400px" />
         </div>
 

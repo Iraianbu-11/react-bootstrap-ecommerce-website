@@ -1,5 +1,6 @@
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_SERVER_URL;
 export const addCart = (product) => {
   return {
     type: "ADDITEM",
@@ -35,7 +36,7 @@ export const fetchProducts = () => {
   return async (dispatch) => {
     dispatch(fetchProductsRequest());
     try {
-      const response = await axios.get("http://localhost:3000/products");
+      const response = await axios.get(API_URL);
       dispatch(fetchProductsSuccess(response.data));
     } catch (error) {
       dispatch(fetchProductsFailure(error.message));
