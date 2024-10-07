@@ -13,7 +13,7 @@ const Product = () => {
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      const response = await fetch(`http://localhost:4000/products/${id}`);
+      const response = await fetch(`http://localhost:3000/products/${id}`);
       const productData = await response.json();
       setProduct(productData);
       setLoading(false);

@@ -32,7 +32,12 @@ const Navbar = () => {
                   Products
                 </NavLink>
               </li>
-              <li className="nav-item">
+              <li className="nav-item ">
+                <NavLink className="nav-link " to="/admin">
+                  Admin
+                </NavLink>
+              </li>
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
                   About
                 </NavLink>
@@ -41,7 +46,7 @@ const Navbar = () => {
                 <NavLink className="nav-link" to="/contact">
                   Contact
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
             <div className="buttons">
               <NavLink to="/cart" className="btn btn-outline-dark ms-2">

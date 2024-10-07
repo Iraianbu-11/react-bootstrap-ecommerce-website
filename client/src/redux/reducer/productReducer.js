@@ -17,7 +17,7 @@ import {
       case FETCH_PRODUCTS_REQUEST:
         return { ...state, loading: true };
       case FETCH_PRODUCTS_SUCCESS:
-        return { ...state, loading: false, products: action.payload , error : ""};
+        return { ...state, loading: false, products: action.payload , error : ""  };
       case FETCH_PRODUCTS_FAILURE:
         return { ...state, loading: false, products : [] , error: action.payload };
       default:

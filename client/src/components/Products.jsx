@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom";
 
 const Products = () => {
   const { products, loading, error } = useSelector((state) => state.products);
-  console.log(error);
   const dispatch = useDispatch();
   const [filter, setFilter] = useState(products);
   useEffect(() => {

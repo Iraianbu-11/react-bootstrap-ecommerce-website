@@ -35,7 +35,7 @@ export const fetchProducts = () => {
   return async (dispatch) => {
     dispatch(fetchProductsRequest());
     try {
-      const response = await axios.get("http://localhost:4000/products");
+      const response = await axios.get("http://localhost:3000/products");
       dispatch(fetchProductsSuccess(response.data));
     } catch (error) {
       dispatch(fetchProductsFailure(error.message));
